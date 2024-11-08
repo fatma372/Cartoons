@@ -43,8 +43,9 @@ prevBtn.addEventListener("click", function() {
     if (requestInfo?.previousPage) { 
         charactersContainer.innerHTML = "";
         page--;  
-        currentPage.innerHTML = `${page}`;  
-        getCharacters(requestInfo.previousPage);  
+        currentPage.innerHTML = `${page}`; 
+        let currentCharactersUrl = `https://api.disneyapi.dev/character?page=${page}&pageSize=20`;
+        getCharacters(currentCharactersUrl);  
     }  
 });  
 
@@ -53,16 +54,18 @@ nextBtn.addEventListener("click", function() {
         charactersContainer.innerHTML = "";
         page++;  
         currentPage.innerHTML = `${page}`;  
-        getCharacters(requestInfo.nextPage);  
+        let currentCharactersUrl = `https://api.disneyapi.dev/character?page=${page}&pageSize=20`;
+        getCharacters(currentCharactersUrl);
     }  
 });  
 
-// Additional button for more characters  
+// button for more characters  
 let moreBtn = document.querySelector(".float-btn");  
 moreBtn.addEventListener("click", function() {  
     if (requestInfo?.nextPage) {  
         page++;  
-        currentPage.innerHTML = `${page}`;  
-        getCharacters(requestInfo.nextPage);  
+        currentPage.innerHTML = `${page}`; 
+        let currentCharactersUrl = `https://api.disneyapi.dev/character?page=${page}&pageSize=20`; 
+        getCharacters(currentCharactersUrl);
     }  
 });
