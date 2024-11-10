@@ -9,9 +9,9 @@ async function getCharacters(url) {
         
         let data = await response.json();  
         requestInfo = data.info;  
-        console.log(requestInfo);  
+        //console.log(requestInfo);  
         let characters = data.data;  
-        console.log(characters);  
+        //console.log(characters);  
 
         //character cards  
         characters.forEach(character => {  
@@ -19,10 +19,10 @@ async function getCharacters(url) {
             let shows = character.tvShows.map(show => `<span class="char-show">${show}</span>`).join(' ');  
 
             charactersContainer.innerHTML += `  
-                <div class="character-card">  
-                    <img class="character-img" src="${character.imageUrl}" alt="${character.name}">  
+                <div class="character-card ">  
+                    <img class="character-img" src="${character.imageUrl}" loading="lazy" alt="${character.name}">  
                     <h3 class="character-title">${character.name}</h3>  
-                    <p class="shows">Shows: ${shows ? shows : `<span class="invalid-text">No TV Shows found!</span>`}</p>   
+                    <p class="shows"> TV Shows: ${shows ? shows : `<span class="invalid-text">No TV Shows found!</span>`}</p>   
                     <p class="films">Films: ${films ? films :  `<span class="invalid-text">No Films found!</span>`}</p>  
                 </div>`;  
         });  

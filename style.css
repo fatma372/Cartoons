@@ -18,17 +18,36 @@ body{
 
     max-width: 100svw;
     display: grid;
-    grid-template-rows: 60px 1fr 50px;
+    grid-template-rows: 60px 1fr 60px;
+    grid-template-areas: 
+    "header"
+    "main"
+    "footer"
+    ;
+    background-image: linear-gradient(to bottom right,black 60%, rgba(255, 0, 0, 0.505));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 header{
-    background-color: red;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 10px;
+    padding: 10px ;
     color: #313131;
+    background-color: black;
+
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 100;
+
+    backdrop-filter: blur(15px);
+}
+header h1{
+    text-shadow: 0px 1px 1px rgba(193, 6, 6, 0.801);
+    letter-spacing: 5px;
 }
 
 header nav ul{
@@ -44,9 +63,12 @@ header nav ul{
 }
 main{
     padding: 20px 10px;
+
+    grid-area: main;
 }
 
 .pages{
+    text-align: center;
     display: flex;
     gap: 10px;
     color: #f0f0f0;
@@ -54,13 +76,13 @@ main{
     align-items: center;
     justify-content:space-between;
     width: 80%;
-    margin: 0 auto;
+    margin: 10px auto;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    box-shadow: 0px 0px 10px orangered;
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.801);
     
 }
 
@@ -75,24 +97,25 @@ main{
     background-color: #313131;
     color: #F0F0F0;
     
-    box-shadow: 0px 0px 10px orangered;
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.801);
 }
 
 .pages button:hover{
-    background-color: orangered;
+    background-color: rgba(255, 0, 0, 0.872);
   color: #1c1c1c;
-    box-shadow: 0px 0px 10px orangered;
+  color: #f0f0f0;
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.801);
 }
 
 .characters {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
     padding: 10px;
     align-content: stretch;
     justify-content: center;
 
-    width: 80%;
+    width: 85%;
     margin: 0 auto;
 }
 
@@ -112,7 +135,7 @@ main{
     justify-content: space-between;
 
     background-color: #1c1c1c;
-    box-shadow: 0px 0px 10px orangered;
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.801);
 }
 
 .character-title{
@@ -181,8 +204,12 @@ main{
 footer{
     background-color: #313131;
     color: white;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
+
+    background-color: black;
+    text-shadow: 0px 0px 1px red;
+    grid-area: footer;
 }
 
 .float-btn{
@@ -213,7 +240,7 @@ footer{
     background-color: #313131;
     color: #F0F0F0;
     
-    box-shadow: 0px 0px 10px orangered;
+    box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.801);
 }
 i{
     margin-left: 3px;
